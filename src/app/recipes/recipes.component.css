@@ -1,0 +1,8 @@
+p{
+  border-color: darkred;
+  border: 1px;
+  color: aliceblue;
+  background-color: rgb(180, 95, 95);
+  margin: 20px;
+  padding: 10px;
+}
