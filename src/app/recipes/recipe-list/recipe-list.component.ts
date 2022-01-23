@@ -1,5 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,20 +9,18 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  @Output()  recipeWasSelected = new EventEmitter<Recipe>();
-  recipes:Recipe[] =[
-    new Recipe('A Test Recipe',' This is simply a  test', 'https://www.turkfoodsrecipes.com/wp-content/uploads/2019/11/Turkish-Tas-Kebabı-Recipe.jpg'),
-    new Recipe('A Test Recipe',' This is simply a  test','https://www.turkfoodsrecipes.com/wp-content/uploads/2019/11/Raw-Meatballs-with-Meat-Etli-Cig-Kofte-.png'),
-    new Recipe('A Test Recipe',' This is simply a  test', 'https://www.turkfoodsrecipes.com/wp-content/uploads/2019/11/Izmir-Meatball-Recipe.jpg'),
-    new Recipe('A Test Recipe',' This is simply a  test', 'https://www.turkfoodsrecipes.com/wp-content/uploads/2019/11/Turkish-Meat-Saute-Recipe.jpg')
-  ]
-  constructor() { }
+  recipes:Recipe[];
+
+  constructor(private recipeService :RecipeService,
+              private router :Router,
+              private route :ActivatedRoute ) { }
 
   ngOnInit(): void {
+    this.recipes = this.recipeService.getRecipes();
   }
 
-  onRecipeSelected(recipe :Recipe){
-    this.recipeWasSelected.emit(recipe);
+  onNewRecipe(){
+    this.router.navigate(['new'], {relativeTo: this.route})
   }
 
 }
