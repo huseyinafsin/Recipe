@@ -1,13 +1,12 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Recipe } from './recipe.model';
 @Injectable()
 export class RecipeService {
-  public recipeSelected = new EventEmitter<Recipe>();
   private recipes: Recipe[] = [
     new Recipe(
-      'A Test Recipe',
+      'Kebap',
       ' This is simply a  test',
       'https://www.turkfoodsrecipes.com/wp-content/uploads/2019/11/Turkish-Tas-Kebabı-Recipe.jpg',
       [
@@ -16,7 +15,7 @@ export class RecipeService {
       ]
     ),
     new Recipe(
-      'A Test Recipe',
+      'Testi kebabı',
       ' This is simply a  test',
       'https://www.turkfoodsrecipes.com/wp-content/uploads/2019/11/Raw-Meatballs-with-Meat-Etli-Cig-Kofte-.png',
       [
@@ -25,7 +24,7 @@ export class RecipeService {
       ]
     ),
     new Recipe(
-      'A Test Recipe',
+      'Lolaz Dürüm',
       ' This is simply a  test',
       'https://www.turkfoodsrecipes.com/wp-content/uploads/2019/11/Izmir-Meatball-Recipe.jpg',
       [
@@ -34,7 +33,7 @@ export class RecipeService {
       ]
     ),
     new Recipe(
-      'A Test Recipe',
+      'Kuru Fasulye',
       ' This is simply a  test',
       'https://www.turkfoodsrecipes.com/wp-content/uploads/2019/11/Turkish-Meat-Saute-Recipe.jpg',
       [
