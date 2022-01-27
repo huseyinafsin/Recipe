@@ -4,15 +4,7 @@
 
 export const environment = {
   production: false,
-  firebase:{
-    apiKey: "AIzaSyDNo3x029XwdL4QsjcbQoPzS4rWi5HsFLI",
-    authDomain: "fir-demo-e3e63.firebaseapp.com",
-    projectId: "fir-demo-e3e63",
-    storageBucket: "fir-demo-e3e63.appspot.com",
-    messagingSenderId: "38651047497",
-    appId: "1:38651047497:web:094533b7d6994315add998",
-    measurementId: "G-CL3LHY3E7Y"
-  }
+
 };
 
 /*
